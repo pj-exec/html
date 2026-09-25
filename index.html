@@ -1,12 +1,23 @@
 <!Doctype html>
 <html lang="en">
-    <head>
-        <meta charset = "UTF=8">
-        <meta name="viewport" content="width=device-width", initial-scale="1.0">
-        <title>Portfolio Website</title>
-        <link rel="stylesheet" href="styles.css">
-        <link rel ="stylesheet" href="https://cdnjs.cloudfare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    </head>
+   <head>
+    <meta charset="UTF-8">
+    <!-- Fixed the content syntax typo here -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    
+    <!-- 1. Google Fonts (Poppins) Import Links -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- 2. Your CSS Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- 3. Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
     <body>
         <header class="header">
             <a href="#" class="logo"><span>Precious</span></a>
@@ -34,7 +45,7 @@
             <div class="about-container">
                 <img src="profile.png" alt="">
 
-                <div class="info box">
+                <div class="info-box">
                     <div class="text">
                         <h3>Hi, I'm</h3>
                         <h1>Precious</h1>
@@ -48,6 +59,72 @@
                     <div class="socials">
                         <i class="fa-brands fa-github"></i>
                         <i class="fa-brands fa-linkedin"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="experience">
+            <h2 class="section-title">Experience</h2>
+            <div class="experience-info">
+                <div class="grid">
+                    <div class="grid-card">
+                        <i class="fa-solid fa-code"></i>
+                        <span>Full-Stack Development</span>
+                        <h3>4 years</h3>
+                        <p>Building and maintaining web applications across both frontend and backend, including features, APIs, and database integration.</p>
+                    </div>
+                    <div class="grid-card">
+                        <i class="fa-solid fa-computer"></i>
+                        <span>Web Application Development</span>
+                        <h3>4 years</h3>
+                        <p>Developing responsive and user-friendly web applications, implementing features, fixing issues, and improving existing systems.</p>
+                    </div>
+                    <div class="grid-card">
+                        <i class="fa-brands fa-wordpress"></i>
+                        <span>WordPress Development</span>
+                        <h3>2 years</h3>
+                        <p>Building, customizing, and maintaining WordPress websites, including themes, layouts, and website functionality.</p>
+                    </div>
+                    <div class="grid-card">
+                        <i class="fa-mosaic fa-solid fa-database"></i>
+                        <span>Database and Data Management</span>
+                        <h3>3 years</h3>
+                        <p>Working with databases to store, organize, retrieve, and manage application data using SQL and database technologies.</p>
+                    </div>
+                </div>
+                <img src="profile.png" alt="">
+            </div>
+        </section>
+        <section id="projects" class="projects">
+            <h2 class="section-title">Recent Projects</h2>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <img src="project1.png" alt="">
+                    <h3>Project x</h3>
+                    <p></p>
+                    <div class="btn-group">
+                        <div class="btn">Live Demo</div>
+                        <div class="btn">Github Demo</div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="project2.png" alt="">
+                    <h3>Project X</h3>
+                    <p></p>
+                    <div class="btn-group">
+                        <div class="btn">Live Demo</div>
+                        <div class="btn">Github Demo</div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="project3.png" alt="">
+                    <h3>Project X</h3>
+                    <p></p>
+                    <div class="btn-group">
+                        <div class="btn">Live Demo</div>
+                        <div class="btn">Github Demo</div>
                     </div>
                 </div>
             </div>
