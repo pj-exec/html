@@ -1,33 +1,537 @@
-<!Doctype html>
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width", initial-scale="1">
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <!--Blob style-->
-        <div class="blob blob1"></div>
-        <div class="blob blob2"></div>
-        <!--Navbar-->
-        <header>
-            <nav class="navbar glass">
-                <h2 class="logo">
-                    Precious
-                </h2>
-                <ul class="nav-links" id="navLinks">
-                    <li><a>About</a></li>
-                    <li><a>Projects</a></li>
-                    <li><a>Skills</a></li>
-                    <li><a>Contacts</a></li>
-                </ul>
-                <div class="nav-actions">
-                    <button id="themeToggle">🌙</button>
-                    <div class="hamburger" id="hamburger">
-                        &#9776;
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Thy-Precious · Software Engineer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="topbar">
+        <b>Thy-Precious<span style="color:var(--hot)">.</span></b>
+
+        <div style="display:flex;align-items:center;gap:10px">
+            <button class="switch theme-switch" role="switch" aria-checked="false" aria-label="Dark mode">
+                <span class="ico sun">☀</span>
+                <span class="ico moon">☾</span>
+            </button>
+
+            <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="sidebar">
+                ☰ menu
+            </button>
+        </div>
+    </div>
+
+    <div class="scrim" id="scrim" hidden></div>
+
+    <aside class="side" id="sidebar">
+        <div class="me">
+            <div class="avatar" aria-hidden="true">TP</div>
+            <div>
+                <b>Thy-Precious</b>
+                <small>~/software-engineer</small>
+            </div>
+        </div>
+
+        <nav aria-label="Sections">
+            <div class="tree-label">Explorer</div>
+
+            <ul>
+                <li>
+                    <a href="#home" class="active">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>
+                        </svg>
+                        index<span class="ext">.tsx</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#about">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="8" r="4"/>
+                            <path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/>
+                        </svg>
+                        about<span class="ext">.md</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#skills">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M8 4H6a2 2 0 0 0-2 2v4l-2 2 2 2v4a2 2 0 0 0 2 2h2M16 4h2a2 2 0 0 1 2 2v4l2 2-2 2v4a2 2 0 0 1-2 2h-2"/>
+                        </svg>
+                        skills<span class="ext">.json</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#projects">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        </svg>
+                        projects<span class="ext">/</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#experience">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="6" cy="6" r="2.5"/>
+                            <circle cx="6" cy="18" r="2.5"/>
+                            <circle cx="18" cy="12" r="2.5"/>
+                            <path d="M6 8.5v7M8.5 6c5 0 7 2 7 6"/>
+                        </svg>
+                        experience<span class="ext">.log</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#contact">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 17l6-6-6-6M12 19h8"/>
+                        </svg>
+                        contact<span class="ext">.sh</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="side-foot">
+            <div class="status">
+                <i></i>
+                Open to full-time roles
+            </div>
+
+            <div class="theme">
+                <span id="themeLabel">Light mode</span>
+
+                <button class="switch theme-switch" role="switch" aria-checked="false" aria-label="Dark mode">
+                    <span class="ico sun">☀</span>
+                    <span class="ico moon">☾</span>
+                </button>
+            </div>
+        </div>
+    </aside>
+
+    <main>
+        <div class="wrap">
+
+            <!-- HERO -->
+            <section id="home" class="hero">
+                <div>
+                    <p class="eyebrow">hello, world</p>
+
+                    <h1>
+                        I build <span class="hl">fast, friendly</span> software people enjoy using<span class="caret" aria-hidden="true"></span>
+                    </h1>
+
+                    <p class="lede">
+                        I'm Thy-Precious, a software engineer working across the stack with HTML, CSS, JavaScript, APIs and databases. I turn fuzzy product ideas into clean interfaces backed by reliable services.
+                    </p>
+
+                    <div class="cta">
+                        <a class="btn btn-primary" href="#projects">See my work →</a>
+                        <a class="btn btn-ghost" href="#contact">Let's talk</a>
+                    </div>
+
+                    <div class="facts">
+                        <div>
+                            <b>3+</b>
+                            years building
+                        </div>
+                        <div>
+                            <b>20+</b>
+                            projects shipped
+                        </div>
+                        <div>
+                            <b>98</b>
+                            avg. Lighthouse score
+                        </div>
                     </div>
                 </div>
-            </nav>
-        </header>
-    </body>
-    </body>
+
+                <div class="code" aria-label="Code snippet describing Thy-Precious">
+                    <div class="code-head">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                        <span>engineer.js</span>
+                    </div>
+
+                    <pre><span class="k">const</span> engineer = {
+  name: <span class="s">"Thy-Precious"</span>,
+  role: <span class="s">"Software Engineer"</span>,
+  stack: [<span class="s">"JavaScript"</span>, <span class="s">"Node"</span>,
+          <span class="s">"React"</span>, <span class="s">"SQL"</span>],
+  loves: <span class="s">"creative front-end"</span>,
+  <span class="p">ship</span>() {
+    <span class="k">return</span> <span class="s">"tested, accessible, fast"</span>;
+  },
+};
+<span class="c">// currently: open to new roles ✓</span></pre>
+                </div>
+            </section>
+
+            <!-- ABOUT -->
+            <section id="about">
+                <p class="eyebrow">about.md</p>
+                <h2>Engineer with a designer's eye</h2>
+
+                <div class="about">
+                    <div class="about-text">
+                        <p>
+                            I like the space where code meets craft. On the front end I care about motion, typography and accessibility. On the back end I care about clear API contracts, sensible data models and queries that stay fast as data grows.
+                        </p>
+
+                        <p>
+                            My best work happens on small, product-minded teams: I'll pair with a designer on Monday, write a migration on Tuesday, and ship the feature behind a flag by Friday. I document what I build so the next person can move quickly too.
+                        </p>
+                    </div>
+
+                    <div class="values">
+                        <div class="value">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M13 2L4 14h7l-1 8 9-12h-7z"/>
+                            </svg>
+                            <div>
+                                <b>Performance first</b>
+                                <span>Budgets for bundle size, Core Web Vitals and query time.</span>
+                            </div>
+                        </div>
+
+                        <div class="value">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="9"/>
+                                <path d="M8 12l3 3 5-6"/>
+                            </svg>
+                            <div>
+                                <b>Accessible by default</b>
+                                <span>Semantic HTML, keyboard paths and WCAG AA contrast.</span>
+                            </div>
+                        </div>
+
+                        <div class="value">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 6h16M4 12h10M4 18h7"/>
+                            </svg>
+                            <div>
+                                <b>Clear communication</b>
+                                <span>Readable PRs, written specs and honest estimates.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SKILLS -->
+            <section id="skills">
+                <p class="eyebrow">skills.json</p>
+                <h2>Tools I reach for</h2>
+
+                <div class="skills">
+                    <div class="skill-group">
+                        <h3>Front end</h3>
+                        <span class="file">"frontend": [...]</span>
+
+                        <div class="bars">
+                            <div>
+                                <div class="bar-row">
+                                    HTML &amp; CSS <em>expert</em>
+                                </div>
+                                <div class="bar">
+                                    <span style="width:95%"></span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="bar-row">
+                                    JavaScript / TypeScript <em>advanced</em>
+                                </div>
+                                <div class="bar">
+                                    <span style="width:88%"></span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="bar-row">
+                                    React / Next.js <em>advanced</em>
+                                </div>
+                                <div class="bar">
+                                    <span style="width:82%"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <h3>Back end</h3>
+                        <span class="file">"backend": [...]</span>
+
+                        <div class="bars">
+                            <div>
+                                <div class="bar-row">
+                                    Node.js / Express <em>advanced</em>
+                                </div>
+                                <div class="bar">
+                                    <span style="width:84%"></span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="bar-row">
+                                    REST &amp; GraphQL APIs <em>advanced</em>
+                                </div>
+                                <div class="bar">
+                                    <span style="width:80%"></span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="bar-row">
+                                    PostgreSQL / MongoDB <em>proficient</em>
+                                </div>
+                                <div class="bar">
+                                    <span style="width:74%"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <h3>Workflow</h3>
+                        <span class="file">"tooling": [...]</span>
+
+                        <div class="tags">
+                            <span class="tag">Git</span>
+                            <span class="tag">Docker</span>
+                            <span class="tag">CI/CD</span>
+                            <span class="tag">Jest</span>
+                            <span class="tag">Playwright</span>
+                            <span class="tag">Figma</span>
+                            <span class="tag">Vercel</span>
+                            <span class="tag">AWS</span>
+                            <span class="tag">GSAP</span>
+                            <span class="tag">Canvas / WebGL</span>
+                            <span class="tag">Agile</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROJECTS -->
+            <section id="projects">
+                <p class="eyebrow">projects/</p>
+                <h2>Selected work</h2>
+
+                <div class="filters" role="group" aria-label="Filter projects">
+                    <button aria-pressed="true" data-f="all">all</button>
+                    <button aria-pressed="false" data-f="fullstack">full-stack</button>
+                    <button aria-pressed="false" data-f="frontend">front-end</button>
+                    <button aria-pressed="false" data-f="api">api</button>
+                </div>
+
+                <div class="projects">
+                    <article class="proj featured" data-cat="fullstack frontend">
+                        <div class="shot" style="background:#359FA0">
+                            <canvas data-seed="1"></canvas>
+
+                            <div class="mock">
+                                <div class="row a"></div>
+                                <div class="row"></div>
+                                <div class="row s"></div>
+                                <div class="grid">
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="proj-body">
+                            <span class="proj-meta">FEATURED · FULL-STACK</span>
+                            <h3>Tidepool — team task board</h3>
+
+                            <p>
+                                A real-time Kanban app with drag-and-drop, live cursors and offline support. Built the UI in React and the sync layer on Node with WebSockets and PostgreSQL.
+                            </p>
+
+                            <div class="impact">
+                                Cut board load time from 2.4s to 0.6s with query batching and optimistic UI.
+                            </div>
+
+                            <div class="tags">
+                                <span class="tag">React</span>
+                                <span class="tag">Node</span>
+                                <span class="tag">WebSockets</span>
+                                <span class="tag">PostgreSQL</span>
+                            </div>
+
+                            <div class="proj-links">
+                                <a href="https://github.com" target="_blank" rel="noopener">Code ↗</a>
+                                <a href="https://github.com" target="_blank" rel="noopener">Live demo ↗</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="proj" data-cat="frontend">
+                        <div class="shot" style="background:#FF8C52">
+                            <canvas data-seed="2"></canvas>
+
+                            <div class="mock">
+                                <div class="row s"></div>
+                                <div class="grid">
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                </div>
+                                <div class="row"></div>
+                            </div>
+                        </div>
+
+                        <div class="proj-body">
+                            <span class="proj-meta">FRONT-END · ANIMATION</span>
+                            <h3>Pixel Starfield</h3>
+
+                            <p>
+                                An animated, pixel-style star background converted from React to dependency-free vanilla JS and Canvas.
+                            </p>
+
+                            <div class="tags">
+                                <span class="tag">Canvas</span>
+                                <span class="tag">Vanilla JS</span>
+                                <span class="tag">CSS</span>
+                            </div>
+
+                            <div class="proj-links">
+                                <a href="https://github.com" target="_blank" rel="noopener">Code ↗</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="proj" data-cat="api fullstack">
+                        <div class="shot" style="background:#8AD6D1">
+                            <canvas data-seed="3"></canvas>
+
+                            <div class="mock">
+                                <div class="row a"></div>
+                                <div class="row"></div>
+                                <div class="row"></div>
+                                <div class="row s"></div>
+                            </div>
+                        </div>
+
+                        <div class="proj-body">
+                            <span class="proj-meta">API · DATABASE</span>
+                            <h3>Ledgerly API</h3>
+
+                            <p>
+                                A REST API for small-shop invoicing with auth, rate limiting, OpenAPI docs and 92% test coverage.
+                            </p>
+
+                            <div class="tags">
+                                <span class="tag">Express</span>
+                                <span class="tag">JWT</span>
+                                <span class="tag">Prisma</span>
+                                <span class="tag">Jest</span>
+                            </div>
+
+                            <div class="proj-links">
+                                <a href="https://github.com" target="_blank" rel="noopener">Code ↗</a>
+                                <a href="https://github.com" target="_blank" rel="noopener">Docs ↗</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- EXPERIENCE -->
+            <section id="experience">
+                <p class="eyebrow">experience.log</p>
+                <h2>Where I've shipped</h2>
+
+                <ol class="timeline">
+                    <li>
+                        <div class="when">2024 — present</div>
+
+                        <div class="role">
+                            <h3>Software Engineer</h3>
+                            <div class="org">Bantenya</div>
+
+                            <ul>
+                                <li>Build and maintain customer-facing web features end to end, from UI to API to database.</li>
+                                <li>Introduced a shared component library that sped up new page builds.</li>
+                                <li>Set up automated tests and preview deploys for every pull request.</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="when">2023 — 2024</div>
+
+                        <div class="role">
+                            <h3>Front-End Developer</h3>
+                            <div class="org">Freelance</div>
+
+                            <ul>
+                                <li>Designed and built responsive marketing sites and landing pages for small businesses.</li>
+                                <li>Added interactive animations with Canvas and CSS while keeping pages fast.</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="when">2022 — 2023</div>
+
+                        <div class="role">
+                            <h3>Junior Web Developer</h3>
+                            <div class="org">Your previous company</div>
+
+                            <ul>
+                                <li>Shipped features in JavaScript and integrated third-party REST APIs.</li>
+                                <li>Wrote SQL reports and fixed performance issues in legacy pages.</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ol>
+            </section>
+
+            <!-- CONTACT -->
+            <section id="contact" class="contact">
+                <div>
+                    <p class="eyebrow">contact.sh</p>
+                    <h2>Let's build something good together</h2>
+
+                    <p>
+                        I'm open to full-time software engineering roles and interesting freelance projects. I usually reply within a day.
+                    </p>
+                </div>
+
+                <div class="links">
+                    <div class="mail">
+                        <code id="email">hello@yourdomain.dev</code>
+                        <button id="copyBtn" type="button">copy</button>
+                    </div>
+
+                    <div class="social">
+                        <a href="https://github.com" target="_blank" rel="noopener">GitHub ↗</a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn ↗</a>
+                        <a href="#contact">Résumé (PDF)</a>
+                    </div>
+                </div>
+            </section>
+
+            <footer>
+                Built by hand with HTML, CSS &amp; JavaScript · © 2026 Thy-Precious
+            </footer>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
 </html>
