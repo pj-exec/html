@@ -347,7 +347,11 @@ main {
     margin-left: 0;
     padding-block: 32px 64px;
   }
+  .theme{
+  display: none;
+  }
 }
+
 .wrap {
   max-width: 980px;
   margin: 0 auto;
